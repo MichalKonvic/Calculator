@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script defer>
+    </script>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(45deg, rgb(218, 50, 50), rgb(134, 90, 223));
+        }
+
+        .Calc-base {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: grid;
+            grid-template-columns: 100px 100px 100px 100px;
+            grid-template-rows: 150px 100px 100px 100px 100px 100px;
+        }
+
+        .Display {
+            grid-column-start: 1;
+            grid-column-end: 5;
+            display: grid;
+            grid-template-areas:
+                'result'
+                'input_output';
+            justify-items: end;
+            background-color: rgb(56, 56, 56);
+        }
+
+        .plus {
+            grid-column-start: 4;
+            grid-column-end: 5;
+            grid-row-start: 3;
+            grid-row-end: 5;
+        }
+
+        .equal {
+            grid-column-start: 4;
+            grid-column-end: 5;
+            grid-row-start: 5;
+            grid-row-end: 7;
+        }
+
+        .zero {
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+
+        .Calc-base button {
+            outline: none;
+            font-size: 20px;
+            font-family: sans-serif;
+            border: none;
+            transition-duration: 0.3s;
+        }
+
+        .Calc-base button:hover {
+            background-color: rgb(64, 86, 213);
+        }
+
+        .Calc-base button:active {
+            background-color: rgb(19, 52, 242);
+        }
+
+        .input_output {
+            grid-area: input_output;
+            background-color: transparent;
+            outline: none;
+            border: none;
+            width: 100%;
+            text-align: right;
+            color: white;
+            padding: 20px 30px 0px 0px;
+            font-size: 50px;
+        }
+
+        .result {
+            grid-area: result;
+            background-color: transparent;
+            outline: none;
+            border: none;
+            width: 100%;
+            text-align: right;
+            color: rgb(181, 181, 181);
+            padding: 15px 30px 0px 0px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="Calc-base">
+        <div class="Display">
+            <p id="result" class="result"></p>
+            <input id="input_output" class="input_output" type="text">
+        </div>
+        <button>C</button>
+        <button>/</button>
+        <button>*</button>
+        <button>-</button>
+        <button>7</button>
+        <button>8</button>
+        <button>9</button>
+        <button class="plus">+</button>
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button class="equal">=</button>
+        <button class="zero">0</button>
+        <button>.</button>
+    </main>
+</body>
+
+</html>
